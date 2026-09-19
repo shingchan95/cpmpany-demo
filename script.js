@@ -44,7 +44,10 @@ document.addEventListener('click', (event) => {
 });
 
 document.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape') closeMenu();
+  if (event.key === 'Escape' && nav?.classList.contains('is-open')) {
+    closeMenu();
+    menuToggle?.focus();
+  }
 });
 
 document.querySelector('#contact-form')?.addEventListener('submit', (event) => {

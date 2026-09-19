@@ -3,3 +3,16 @@
 a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 .menu-toggle{padding:8px;cursor:pointer}
 .form-message:empty{display:none}
+.button:focus-visible,
+.nav-links a:focus-visible,
+.text-link:focus-visible,
+.brand:focus-visible,
+.contact-details a:focus-visible,
+.menu-toggle:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+
+main:focus { outline: none; }
