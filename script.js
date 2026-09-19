@@ -4,6 +4,7 @@ const closeMenu = () => {
   menuToggle?.setAttribute('aria-expanded', 'false');
   menuToggle?.setAttribute('aria-label', 'Open menu');
   nav?.classList.remove('is-open');
+  nav?.removeAttribute('aria-hidden');
 };
 
 menuToggle?.addEventListener('click', () => {
@@ -11,6 +12,12 @@ menuToggle?.addEventListener('click', () => {
   menuToggle.setAttribute('aria-expanded', String(!open));
   menuToggle.setAttribute('aria-label', open ? 'Open menu' : 'Close menu');
   nav.classList.toggle('is-open', !open);
+  if (open) {
+    nav.removeAttribute('aria-hidden');
+  } else {
+    nav.setAttribute('aria-hidden', 'false');
+    nav.querySelector('a')?.focus();
+  }
 });
 
 nav?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
