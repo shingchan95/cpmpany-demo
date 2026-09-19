@@ -1,16 +1,53 @@
 const menuToggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.nav-links');
+const isMobile = () => window.matchMedia('(max-width: 760px)').matches;
+const syncMenuAccessibility = () => {
+  if (!nav || !menuToggle) return;
+  if (isMobile()) {
+    nav.setAttribute('aria-hidden', menuToggle.getAttribute('aria-expanded') !== 'true' ? 'true' : 'false');
+  } else {
+    nav.removeAttribute('aria-hidden');
+    nav.classList.remove('is-open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.setAttribute('aria-label', 'Open menu');
+  }
+};
+const closeMenu = () => {
+  menuToggle?.setAttribute('aria-expanded', 'false');
+  menuToggle?.setAttribute('aria-label', 'Open menu');
+  nav?.classList.remove('is-open');
+  syncMenuAccessibility();
+};
+
 menuToggle?.addEventListener('click', () => {
   const open = menuToggle.getAttribute('aria-expanded') === 'true';
   menuToggle.setAttribute('aria-expanded', String(!open));
-  nav.style.display = open ? '' : 'flex';
-  nav.style.position = open ? '' : 'absolute';
-  nav.style.top = open ? '' : '72px';
-  nav.style.right = open ? '' : '20px';
-  nav.style.flexDirection = open ? '' : 'column';
-  nav.style.background = open ? '' : 'var(--paper)';
-  nav.style.padding = open ? '' : '18px 24px';
-  nav.style.boxShadow = open ? '' : '0 10px 25px #31453c18';
+  menuToggle.setAttribute('aria-label', open ? 'Open menu' : 'Close menu');
+  nav.classList.toggle('is-open', !open);
+  if (!open) {
+    nav.setAttribute('aria-hidden', 'false');
+    nav.querySelector('a')?.focus();
+  }
+});
+
+// Keep the collapsed mobile navigation out of the accessibility tree until opened.
+syncMenuAccessibility();
+window.addEventListener('resize', syncMenuAccessibility);
+
+nav?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+  closeMenu();
+}));
+
+document.addEventListener('click', (event) => {
+  if (!nav?.classList.contains('is-open')) return;
+  if (!nav.contains(event.target) && !menuToggle?.contains(event.target)) closeMenu();
+});
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && nav?.classList.contains('is-open')) {
+    closeMenu();
+    menuToggle?.focus();
+  }
 });
 
 document.querySelector('#contact-form')?.addEventListener('submit', (event) => {

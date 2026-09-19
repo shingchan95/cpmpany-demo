@@ -1,6 +1,6 @@
 # DEMO Marketing Studio
 
-A responsive marketing-company website demo for DEMO, an independent studio helping ambitious brands find their edge and grow with intent.
+A responsive website demo for DEMO, an independent marketing studio helping ambitious brands sharpen their story and grow with intent. The site includes agency services, sample campaign work, an overview of the studio’s approach, and a contact form demo.
 
 ## Preview locally
 
@@ -8,4 +8,4 @@ Open `index.html` in a browser, or run `python3 -m http.server 8000` from this d
 
 ## Deployment
 
-This is a static site designed for GitHub Pages. It uses the repository root as its Pages source. The contact form is a front-end demo and displays a confirmation message locally.
+The GitHub Actions workflow publishes the static site to GitHub Pages when changes are pushed to `main`. The contact form displays a confirmation in the browser; it does not send submissions.
