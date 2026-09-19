@@ -21,6 +21,7 @@ check(html.includes('aria-label="Contact DEMO Property Management"'), 'contact f
 check(html.includes('mailto:hello@demo-property.co.uk'), 'contact email link is missing');
 check(html.includes('tel:+442079460123'), 'contact phone link is missing');
 check(html.includes('autocomplete="email"'), 'email autocomplete is missing');
+check(html.includes('role="status"'), 'form status region is missing');
 check(internalTargets.every((target) => ids.has(target)), 'an internal link points to a missing section');
 check(script.includes("nav.classList.toggle('is-open'"), 'mobile menu toggle behavior is missing');
 check(script.includes("event.key === 'Escape'"), 'mobile menu Escape handling is missing');
