@@ -13,11 +13,11 @@
 <body>
   <header class="site-header">
     <a class="brand" href="#top" aria-label="DEMO home"><span class="brand-mark">D</span><span>DEMO</span></a>
-    <nav class="nav-links" aria-label="Main navigation">
+    <nav class="nav-links" id="main-navigation" aria-label="Main navigation">
       <a href="#services">Services</a><a href="#approach">Our approach</a><a href="#contact">Contact</a>
     </nav>
     <a class="button button-small button-outline" href="#contact">Talk to us <span aria-hidden="true">↗</span></a>
-    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+    <button class="menu-toggle" aria-label="Open menu" aria-controls="main-navigation" aria-expanded="false">☰</button>
   </header>
 
   <main id="top">
@@ -51,7 +51,7 @@
 
     <section class="quote-section"><div class="section-shell quote-wrap"><div class="quote-mark">“</div><blockquote>DEMO gives us the confidence to grow our portfolio without losing the personal touch our residents value.</blockquote><p>— Alex Morgan, DEMO client since 2019</p></div></section>
 
-    <section class="contact section-shell" id="contact"><div><p class="eyebrow"><span class="eyebrow-dot"></span> Let’s talk</p><h2>Ready to make more<br>of your <em>property?</em></h2></div><div class="contact-card"><p>Tell us a little about what you’re looking for. We’ll be in touch within one working day.</p><form id="contact-form"><label>Name<input required type="text" name="name" placeholder="Your name"></label><label>Email<input required type="email" name="email" placeholder="you@example.com"></label><label>How can we help?<textarea required name="message" rows="3" placeholder="A little about your property..."></textarea></label><button class="button button-primary" type="submit">Send enquiry <span aria-hidden="true">↗</span></button><p class="form-message" aria-live="polite"></p></form></div></section>
+    <section class="contact section-shell" id="contact"><div><p class="eyebrow"><span class="eyebrow-dot"></span> Let’s talk</p><h2>Ready to make more<br>of your <em>property?</em></h2><div class="contact-details"><p><strong>hello@demo-property.co.uk</strong><br><a href="mailto:hello@demo-property.co.uk">Email our team ↗</a></p><p><strong>020 7946 0123</strong><br><a href="tel:+442079460123">Call us, Monday to Friday</a></p><p>18 Clerkenwell Road<br>London EC1M 5PQ</p></div></div><div class="contact-card"><p>Tell us a little about what you’re looking for. We’ll be in touch within one working day.</p><form id="contact-form"><label>Name<input required type="text" name="name" placeholder="Your name"></label><label>Email<input required type="email" name="email" placeholder="you@example.com"></label><label>How can we help?<textarea required name="message" rows="3" placeholder="A little about your property..."></textarea></label><button class="button button-primary" type="submit">Send enquiry <span aria-hidden="true">↗</span></button><p class="form-message" aria-live="polite"></p></form></div></section>
   </main>
 
   <footer class="site-footer"><div class="section-shell footer-inner"><a class="brand" href="#top"><span class="brand-mark">D</span><span>DEMO</span></a><p>Property, thoughtfully managed.</p><div class="footer-links"><a href="#services">Services</a><a href="#approach">Our approach</a><a href="#contact">Contact</a></div><small>© 2024 DEMO Property Management</small></div></footer>
