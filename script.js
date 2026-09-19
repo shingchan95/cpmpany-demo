@@ -1,10 +1,12 @@
 const menuToggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.nav-links');
+const isMobile = () => window.matchMedia('(max-width: 760px)').matches;
 const closeMenu = () => {
   menuToggle?.setAttribute('aria-expanded', 'false');
   menuToggle?.setAttribute('aria-label', 'Open menu');
   nav?.classList.remove('is-open');
-  nav?.removeAttribute('aria-hidden');
+  if (isMobile()) nav?.setAttribute('aria-hidden', 'true');
+  else nav?.removeAttribute('aria-hidden');
 };
 
 menuToggle?.addEventListener('click', () => {
@@ -13,12 +15,18 @@ menuToggle?.addEventListener('click', () => {
   menuToggle.setAttribute('aria-label', open ? 'Open menu' : 'Close menu');
   nav.classList.toggle('is-open', !open);
   if (open) {
-    nav.removeAttribute('aria-hidden');
+    if (isMobile()) nav.setAttribute('aria-hidden', 'true');
+    else nav.removeAttribute('aria-hidden');
   } else {
     nav.setAttribute('aria-hidden', 'false');
     nav.querySelector('a')?.focus();
   }
 });
+
+// Keep the collapsed mobile navigation out of the accessibility tree until opened.
+if (nav && menuToggle && isMobile()) {
+  nav.setAttribute('aria-hidden', 'true');
+}
 
 nav?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
   closeMenu();
