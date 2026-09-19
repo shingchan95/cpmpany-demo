@@ -1,0 +1,4 @@
+.skip-link{position:absolute;left:16px;top:-48px;z-index:20;padding:10px 14px;background:var(--deep);color:#fff;border-radius:0 0 6px 6px}
+.skip-link:focus{top:0}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.menu-toggle{padding:8px;cursor:pointer}

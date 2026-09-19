@@ -17,6 +17,11 @@ nav?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () =
   closeMenu();
 }));
 
+document.addEventListener('click', (event) => {
+  if (!nav?.classList.contains('is-open')) return;
+  if (!nav.contains(event.target) && !menuToggle?.contains(event.target)) closeMenu();
+});
+
 document.addEventListener('keydown', (event) => {
   if (event.key === 'Escape') closeMenu();
 });
