@@ -1,5 +1,11 @@
 const menuToggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.nav-links');
+const closeMenu = () => {
+  menuToggle?.setAttribute('aria-expanded', 'false');
+  menuToggle?.setAttribute('aria-label', 'Open menu');
+  nav?.classList.remove('is-open');
+};
+
 menuToggle?.addEventListener('click', () => {
   const open = menuToggle.getAttribute('aria-expanded') === 'true';
   menuToggle.setAttribute('aria-expanded', String(!open));
@@ -8,10 +14,12 @@ menuToggle?.addEventListener('click', () => {
 });
 
 nav?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
-  menuToggle?.setAttribute('aria-expanded', 'false');
-  menuToggle?.setAttribute('aria-label', 'Open menu');
-  nav.classList.remove('is-open');
+  closeMenu();
 }));
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') closeMenu();
+});
 
 document.querySelector('#contact-form')?.addEventListener('submit', (event) => {
   event.preventDefault();
