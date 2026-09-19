@@ -1,12 +1,22 @@
 const menuToggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.nav-links');
 const isMobile = () => window.matchMedia('(max-width: 760px)').matches;
+const syncMenuAccessibility = () => {
+  if (!nav || !menuToggle) return;
+  if (isMobile()) {
+    nav.setAttribute('aria-hidden', menuToggle.getAttribute('aria-expanded') !== 'true' ? 'true' : 'false');
+  } else {
+    nav.removeAttribute('aria-hidden');
+    nav.classList.remove('is-open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.setAttribute('aria-label', 'Open menu');
+  }
+};
 const closeMenu = () => {
   menuToggle?.setAttribute('aria-expanded', 'false');
   menuToggle?.setAttribute('aria-label', 'Open menu');
   nav?.classList.remove('is-open');
-  if (isMobile()) nav?.setAttribute('aria-hidden', 'true');
-  else nav?.removeAttribute('aria-hidden');
+  syncMenuAccessibility();
 };
 
 menuToggle?.addEventListener('click', () => {
@@ -14,19 +24,15 @@ menuToggle?.addEventListener('click', () => {
   menuToggle.setAttribute('aria-expanded', String(!open));
   menuToggle.setAttribute('aria-label', open ? 'Open menu' : 'Close menu');
   nav.classList.toggle('is-open', !open);
-  if (open) {
-    if (isMobile()) nav.setAttribute('aria-hidden', 'true');
-    else nav.removeAttribute('aria-hidden');
-  } else {
+  if (!open) {
     nav.setAttribute('aria-hidden', 'false');
     nav.querySelector('a')?.focus();
   }
 });
 
 // Keep the collapsed mobile navigation out of the accessibility tree until opened.
-if (nav && menuToggle && isMobile()) {
-  nav.setAttribute('aria-hidden', 'true');
-}
+syncMenuAccessibility();
+window.addEventListener('resize', syncMenuAccessibility);
 
 nav?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
   closeMenu();
