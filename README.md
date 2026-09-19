@@ -1,6 +1,6 @@
-# DEMO Property Management
+# DEMO Marketing Studio
 
-A responsive company website demo for DEMO, a thoughtful property-management company.
+A responsive marketing-company website demo for DEMO, an independent studio helping ambitious brands find their edge and grow with intent.
 
 ## Preview locally
 
@@ -8,4 +8,4 @@ Open `index.html` in a browser, or run `python3 -m http.server 8000` from this d
 
 ## Deployment
 
-This is a static site designed for GitHub Pages. It uses the repository root as its Pages source.
+This is a static site designed for GitHub Pages. It uses the repository root as its Pages source. The contact form is a front-end demo and displays a confirmation message locally.
