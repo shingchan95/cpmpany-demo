@@ -1205,3 +1205,15 @@ section[id] {
     scroll-margin-top: 78px;
   }
 }
+
+.hero-image {
+  background-image: url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1000&q=85');
+}
+
+.approach-image {
+  background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1000&q=85');
+}
+
+.floating-card strong {
+  font-size: 18px;
+}

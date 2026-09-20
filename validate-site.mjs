@@ -15,16 +15,17 @@ const hrefs = [...html.matchAll(/href="([^"]+)"/g)].map((match) => match[1]);
 const internalTargets = hrefs.filter((href) => href.startsWith('#')).map((href) => href.slice(1));
 
 check(html.includes('<meta name="viewport"'), 'viewport metadata is missing');
-check(html.includes('<title>DEMO — Property management, made more human</title>'), 'property management page title is missing');
-check(html.includes('residential property management'), 'property management description is missing');
-check(html.includes('Lettings &amp; management'), 'lettings and management service is missing');
-check(html.includes('Resident support'), 'resident support service is missing');
-check(html.includes('Maintenance coordination'), 'maintenance coordination service is missing');
-check(html.includes('For property owners'), 'owner information is missing');
+check(html.includes('<title>DEMO — Make your next move matter</title>'), 'marketing-company page title is missing');
+check(html.includes('creative marketing company'), 'marketing-company description is missing');
+check(html.includes('Brand strategy'), 'brand strategy service is missing');
+check(html.includes('Creative campaigns'), 'creative campaign service is missing');
+check(html.includes('Digital growth'), 'digital growth service is missing');
+check(html.includes('Selected work'), 'selected-work section is missing');
+check(html.includes('Illustrative demo project'), 'portfolio concepts are not identified as illustrative');
 check(html.includes('aria-controls="main-navigation"'), 'mobile menu is not associated with navigation');
 check(html.includes('id="contact-form"'), 'contact form is missing');
-check(html.includes('aria-label="Contact DEMO Property Management"'), 'contact form label is missing');
-check(html.includes('mailto:hello@demo.example'), 'demo contact email is missing');
+check(html.includes('aria-label="Contact DEMO Marketing Studio"'), 'contact form label is missing');
+check(html.includes('mailto:hello@demo.studio'), 'demo contact email is missing');
 check(html.includes('autocomplete="email"'), 'email autocomplete is missing');
 check(html.includes('role="status"'), 'form status region is missing');
 check(internalTargets.every((target) => ids.has(target)), 'an internal link points to a missing section');
@@ -41,4 +42,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log(`PASS: validated DEMO property management content, light purple theme, ${internalTargets.length} internal links, mobile navigation, contact form, and Pages workflow`);
+console.log(`PASS: validated DEMO marketing content, light purple theme, ${internalTargets.length} internal links, mobile navigation, contact form, and Pages workflow`);
