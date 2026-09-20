@@ -518,6 +518,280 @@ textarea:focus {
   color: #e2e9e5;
 }
 
+/* Final responsive polish: carry the same calm, editorial treatment through
+   every section and keep the layout comfortable on narrow screens. */
+:root {
+  --ink: #1e2c30;
+  --muted: #687477;
+  --paper: #faf8f3;
+  --cream: #f0ece4;
+  --sage: #e5ebe5;
+  --deep: #183d43;
+  --accent: #c66b50;
+  --line: #e4ded5;
+  --radius-card: 16px;
+}
+
+body {
+  overflow-x: hidden;
+  background-image: radial-gradient(ellipse at 86% 4%, rgb(230 213 193 / 18%), transparent 30rem);
+}
+
+.site-header {
+  height: 78px;
+  padding-right: max(24px, calc((100vw - 1180px) / 2));
+  padding-left: max(24px, calc((100vw - 1180px) / 2));
+}
+
+.brand-mark {
+  border-radius: 11px;
+}
+
+.hero {
+  min-height: 630px;
+  padding-top: 60px;
+  padding-bottom: 76px;
+}
+
+.hero-visual {
+  min-height: 405px;
+}
+
+.image-one,
+.approach-image {
+  overflow: hidden;
+}
+
+.stats-grid div {
+  padding-left: clamp(18px, 3vw, 38px);
+}
+
+.services,
+.contact {
+  padding-top: clamp(82px, 10vw, 126px);
+  padding-bottom: clamp(82px, 10vw, 126px);
+}
+
+.service-card {
+  border-radius: var(--radius-card);
+}
+
+.service-card.featured {
+  transform: translateY(-8px);
+}
+
+.service-card.featured:hover {
+  transform: translateY(-13px);
+}
+
+.work {
+  padding-bottom: clamp(82px, 10vw, 130px);
+}
+
+.project {
+  border-radius: var(--radius-card);
+}
+
+.project-art {
+  border-radius: 11px;
+}
+
+.approach {
+  gap: clamp(42px, 8vw, 100px);
+  padding-bottom: clamp(86px, 11vw, 140px);
+}
+
+.approach-image {
+  border-radius: 180px 180px 14px 14px;
+}
+
+.quote-section {
+  background: linear-gradient(115deg, #e7ece5, #e2e9e4 65%, #efe7dc);
+}
+
+.contact-card {
+  padding: clamp(24px, 4vw, 36px);
+}
+
+.site-footer {
+  background: #15363c;
+}
+
+.site-footer .brand-mark {
+  border-radius: 11px;
+}
+
+@media (max-width: 900px) and (min-width: 761px) {
+  .site-header {
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+
+  .nav-links {
+    gap: 18px;
+  }
+
+  .site-header > .button {
+    padding-right: 14px;
+    padding-left: 14px;
+  }
+
+  .section-shell {
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+
+  .approach {
+    gap: 42px;
+  }
+}
+
+@media (max-width: 760px) {
+  html {
+    scroll-padding-top: 76px;
+  }
+
+  .site-header {
+    height: 70px;
+    padding: 0 20px;
+  }
+
+  .nav-links.is-open {
+    top: 70px;
+    right: 14px;
+    left: 14px;
+    gap: 0;
+    padding: 8px 18px;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: rgb(250 248 243 / 98%);
+    box-shadow: 0 16px 36px rgb(28 43 44 / 12%);
+  }
+
+  .nav-links.is-open a {
+    padding: 12px 2px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .nav-links.is-open a:last-child {
+    border-bottom: 0;
+  }
+
+  .hero {
+    padding-top: 44px;
+  }
+
+  .hero h1 {
+    max-width: 560px;
+    font-size: clamp(45px, 11vw, 62px);
+  }
+
+  .hero-visual {
+    min-height: 0;
+    height: clamp(340px, 96vw, 430px);
+  }
+
+  .stats-grid {
+    gap: 20px 12px;
+  }
+
+  .stats-grid div,
+  .stats-grid div:first-child {
+    padding: 0;
+  }
+
+  .stats-grid strong {
+    font-size: 28px;
+  }
+
+  .section-intro,
+  .work-heading {
+    margin-bottom: 34px;
+  }
+
+  .service-card,
+  .service-card.featured {
+    min-height: 255px;
+    margin-bottom: 14px;
+    transform: none;
+  }
+
+  .service-card:hover,
+  .service-card.featured:hover {
+    transform: translateY(-3px);
+  }
+
+  .approach {
+    gap: 38px;
+  }
+
+  .approach-image {
+    height: clamp(340px, 100vw, 440px);
+  }
+
+  .project {
+    margin-bottom: 16px;
+    padding: 12px 12px 24px;
+  }
+
+  .project-art {
+    height: clamp(220px, 63vw, 280px);
+  }
+
+  blockquote {
+    font-size: clamp(25px, 7vw, 31px);
+  }
+
+  .contact-card {
+    margin-top: 34px;
+  }
+
+  .footer-inner {
+    padding-top: 36px;
+    padding-bottom: 28px;
+  }
+}
+
+@media (max-width: 380px) {
+  .section-shell {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
+  .hero-actions {
+    align-items: stretch;
+  }
+
+  .hero-actions .button {
+    width: 100%;
+  }
+
+  .hero-sticker {
+    width: 82px;
+    height: 82px;
+    font-size: 11px;
+  }
+
+  .floating-card {
+    min-width: 0;
+    width: min(250px, 88%);
+    gap: 9px;
+    padding: 14px;
+  }
+
+  .trend {
+    font-size: 10px;
+  }
+}
+
+@media (hover: none) {
+  .service-card:hover,
+  .service-card.featured:hover,
+  .button-primary:hover {
+    transform: none;
+  }
+}
+
 .footer-inner {
   min-height: 180px;
 }
