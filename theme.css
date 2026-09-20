@@ -1,13 +1,15 @@
 :root {
   --ink: #24302e;
-  --muted: #687572;
-  --paper: #faf8f3;
-  --cream: #f0ece3;
+  --muted: #64716e;
+  --paper: #fbf9f5;
+  --cream: #f1ede4;
   --sage: #e6ebe5;
   --deep: #183d3b;
-  --accent: #bd713f;
-  --accent-soft: #edc17c;
+  --accent: #a65331;
+  --accent-soft: #e8bb75;
   --line: #e2ded4;
+  --surface: #fffefa;
+  --surface-muted: #f5f2eb;
   --serif: 'Playfair Display', Georgia, serif;
   --sans: 'DM Sans', Arial, sans-serif;
   --radius: 16px;
@@ -21,7 +23,7 @@ html {
 
 body {
   overflow-x: hidden;
-  background: var(--paper);
+  background: radial-gradient(ellipse at 79% 8%, rgb(232 187 117 / 10%), transparent 32rem), var(--paper);
   color: var(--ink);
   font-size: 15px;
   -webkit-font-smoothing: antialiased;
@@ -99,6 +101,7 @@ body {
 
 .button-outline:hover {
   background: var(--cream);
+  border-color: #b7b2a8;
 }
 
 .button-primary {
@@ -312,7 +315,7 @@ h2 {
   padding: 27px 28px 25px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  background: #fffefa;
+  background: var(--surface);
   box-shadow: 0 8px 26px rgb(28 43 44 / 3%);
   transition: transform .25s ease, box-shadow .25s ease;
 }
@@ -486,7 +489,7 @@ blockquote {
   padding: clamp(24px, 4vw, 36px);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  background: #fffefa;
+  background: var(--surface);
   box-shadow: var(--shadow);
 }
 
@@ -501,8 +504,12 @@ blockquote {
 
 input,
 textarea {
-  border-bottom-color: #d8d4cb;
-  border-radius: 0;
+  min-height: 46px;
+  padding: 11px 13px;
+  border: 1px solid #d8d4cb;
+  border-radius: 9px;
+  background: var(--surface-muted);
+  transition: border-color .2s ease, background-color .2s ease, box-shadow .2s ease;
 }
 
 input::placeholder,
@@ -514,6 +521,8 @@ textarea::placeholder {
 input:focus,
 textarea:focus {
   border-color: var(--accent);
+  background: var(--surface);
+  box-shadow: 0 0 0 3px rgb(166 83 49 / 11%);
 }
 
 .form-message {
@@ -581,6 +590,7 @@ main:focus {
 @media (max-width: 980px) {
   .hero {
     gap: 30px;
+    min-height: 590px;
   }
 
   .hero h1 {
@@ -589,6 +599,10 @@ main:focus {
 
   .approach {
     gap: 48px;
+  }
+
+  .contact {
+    gap: 52px;
   }
 }
 
@@ -783,6 +797,11 @@ main:focus {
 
   .contact-card {
     margin-top: 36px;
+  }
+
+  input,
+  textarea {
+    font-size: 16px;
   }
 
   .footer-inner {
