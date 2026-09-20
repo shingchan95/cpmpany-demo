@@ -1167,3 +1167,41 @@ main:focus {
     background: linear-gradient(180deg, transparent 48%, rgb(18 42 39 / 36%));
   }
 }
+
+/* Final typography and interaction polish across the full page. */
+:root {
+  color-scheme: light;
+}
+
+h1,
+h2,
+h3,
+blockquote {
+  text-wrap: balance;
+}
+
+.eyebrow {
+  color: #526861;
+}
+
+.service-card a,
+.project a,
+.footer-links a {
+  text-underline-offset: 4px;
+}
+
+.service-card a:focus-visible,
+.project a:focus-visible,
+.footer-links a:focus-visible {
+  border-radius: 3px;
+}
+
+section[id] {
+  scroll-margin-top: 94px;
+}
+
+@media (max-width: 760px) {
+  section[id] {
+    scroll-margin-top: 78px;
+  }
+}
