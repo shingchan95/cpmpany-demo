@@ -801,3 +801,88 @@ main:focus {
     animation-iteration-count: 1 !important;
   }
 }
+
+::selection {
+  color: var(--deep);
+  background: var(--accent);
+}
+
+.service-card a,
+.project a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.project {
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.project:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 42px rgb(23 38 34 / 10%);
+}
+
+.project-art span {
+  text-shadow: 0 2px 18px rgb(10 30 22 / 12%);
+}
+
+.contact-card {
+  transition: box-shadow .25s ease;
+}
+
+.contact-card:focus-within {
+  box-shadow: 0 22px 52px rgb(23 38 34 / 12%);
+}
+
+.nav-links a:focus-visible,
+.footer-links a:focus-visible,
+.service-card a:focus-visible,
+.project a:focus-visible,
+.text-link:focus-visible {
+  border-radius: 3px;
+}
+
+@media (max-width: 760px) {
+  .project:hover {
+    transform: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero h1 {
+    font-size: 46px;
+  }
+
+  .hero-sticker {
+    top: 112px;
+    width: 84px;
+    height: 84px;
+    font-size: 11px;
+  }
+
+  .floating-card {
+    min-width: 0;
+    max-width: calc(100% - 20px);
+    gap: 9px;
+    padding: 12px;
+  }
+
+  .floating-card small,
+  .trend {
+    font-size: 10px;
+  }
+
+  .service-card {
+    padding-right: 22px;
+    padding-left: 22px;
+  }
+
+  .contact-card {
+    padding: 21px;
+  }
+
+  .footer-links {
+    gap: 16px;
+  }
+}

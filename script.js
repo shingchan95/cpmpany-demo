@@ -1,6 +1,10 @@
 const menuToggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('.nav-links');
 const isMobile = () => window.matchMedia('(max-width: 760px)').matches;
+const setMenuIcon = (open) => {
+  const icon = menuToggle?.querySelector('span');
+  if (icon) icon.textContent = open ? '×' : '☰';
+};
 const syncMenuAccessibility = () => {
   if (!nav || !menuToggle) return;
   if (isMobile()) {
@@ -10,11 +14,13 @@ const syncMenuAccessibility = () => {
     nav.classList.remove('is-open');
     menuToggle.setAttribute('aria-expanded', 'false');
     menuToggle.setAttribute('aria-label', 'Open menu');
+    setMenuIcon(false);
   }
 };
 const closeMenu = () => {
   menuToggle?.setAttribute('aria-expanded', 'false');
   menuToggle?.setAttribute('aria-label', 'Open menu');
+  setMenuIcon(false);
   nav?.classList.remove('is-open');
   syncMenuAccessibility();
 };
@@ -23,6 +29,7 @@ menuToggle?.addEventListener('click', () => {
   const open = menuToggle.getAttribute('aria-expanded') === 'true';
   menuToggle.setAttribute('aria-expanded', String(!open));
   menuToggle.setAttribute('aria-label', open ? 'Open menu' : 'Close menu');
+  setMenuIcon(!open);
   nav.classList.toggle('is-open', !open);
   if (!open) {
     nav.setAttribute('aria-hidden', 'false');
