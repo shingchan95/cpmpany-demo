@@ -899,6 +899,50 @@ main:focus {
   background-color: var(--cream);
 }
 
+/* Give shared controls and cards the same quiet, tactile finish. */
+.site-header {
+  box-shadow: 0 8px 24px rgb(31 48 44 / 3%);
+}
+
+.brand-mark {
+  box-shadow: 0 5px 14px rgb(166 83 49 / 18%);
+}
+
+.button-primary {
+  box-shadow: 0 8px 20px rgb(24 61 59 / 14%);
+}
+
+.button-primary:hover {
+  box-shadow: 0 12px 26px rgb(24 61 59 / 20%);
+}
+
+.button span {
+  display: inline-block;
+  transition: transform .2s ease;
+}
+
+.button:hover span {
+  transform: translate(2px, -2px);
+}
+
+.service-card:focus-within,
+.project:focus-within {
+  outline: 3px solid rgb(166 83 49 / 28%);
+  outline-offset: 3px;
+}
+
+.contact-card {
+  box-shadow: 0 18px 48px rgb(31 48 44 / 8%);
+}
+
+@media (hover: none) {
+  .service-card:hover,
+  .service-card.featured:hover,
+  .project:hover {
+    transform: none;
+  }
+}
+
 .contact-card input,
 .contact-card textarea {
   transition: border-color .2s ease;
