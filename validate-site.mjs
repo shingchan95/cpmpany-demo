@@ -1,39 +1,40 @@
 import { readFile } from 'node:fs/promises';
 
-const html = await readFile('index.html', 'utf8');
-const script = await readFile('script.js', 'utf8');
-const enhancements = await readFile('enhancements.css', 'utf8');
-const workflow = await readFile('.github/workflows/deploy-pages.yml', 'utf8');
+const [html, script, styles, theme, workflow] = await Promise.all([
+  readFile('index.html', 'utf8'),
+  readFile('script.js', 'utf8'),
+  readFile('styles.css', 'utf8'),
+  readFile('theme.css', 'utf8'),
+  readFile('.github/workflows/deploy-pages.yml', 'utf8'),
+]);
 const failures = [];
-
-const check = (condition, message) => {
-  if (!condition) failures.push(message);
-};
+const check = (condition, message) => { if (!condition) failures.push(message); };
 
 const ids = new Set([...html.matchAll(/\bid="([^"]+)"/g)].map((match) => match[1]));
 const hrefs = [...html.matchAll(/href="([^"]+)"/g)].map((match) => match[1]);
 const internalTargets = hrefs.filter((href) => href.startsWith('#')).map((href) => href.slice(1));
 
 check(html.includes('<meta name="viewport"'), 'viewport metadata is missing');
-check(html.includes('<title>DEMO — Make your next move matter</title>'), 'marketing-company page title is missing');
-check(html.includes('creative marketing company'), 'marketing-company description is missing');
-check(html.includes('Brand strategy'), 'brand strategy service is missing');
-check(html.includes('Creative campaigns'), 'creative campaign service is missing');
-check(html.includes('Digital growth'), 'digital growth service is missing');
-check(html.includes('Selected work'), 'selected-work section is missing');
-check(html.includes('Illustrative demo project'), 'portfolio concepts are not identified as illustrative');
+check(html.includes('DEMO — Technology that moves business forward'), 'technology-company title is missing');
+check(html.includes('Independent technology company'), 'technology-company introduction is missing');
+check(html.includes('Digital products'), 'digital product capability is missing');
+check(html.includes('Software engineering'), 'software engineering capability is missing');
+check(html.includes('Cloud &amp; data'), 'cloud and data capability is missing');
+check(html.includes('Applied AI'), 'applied AI capability is missing');
+check(html.includes('Illustrative work'), 'case-study section is missing');
+check(html.includes('illustrative concepts'), 'case studies are not identified as illustrative');
 check(html.includes('aria-controls="main-navigation"'), 'mobile menu is not associated with navigation');
 check(html.includes('id="contact-form"'), 'contact form is missing');
-check(html.includes('aria-label="Contact DEMO Marketing Studio"'), 'contact form label is missing');
-check(html.includes('mailto:hello@demo.studio'), 'demo contact email is missing');
+check(html.includes('aria-label="Contact DEMO technology company"'), 'contact form label is missing');
+check(html.includes('mailto:hello@demo.tech'), 'contact email is missing');
 check(html.includes('autocomplete="email"'), 'email autocomplete is missing');
 check(html.includes('role="status"'), 'form status region is missing');
 check(internalTargets.every((target) => ids.has(target)), 'an internal link points to a missing section');
 check(script.includes("nav.classList.toggle('is-open'"), 'mobile menu toggle behavior is missing');
 check(script.includes("event.key === 'Escape'"), 'mobile menu Escape handling is missing');
-check(enhancements.includes('prefers-reduced-motion'), 'reduced-motion support is missing');
-check(html.includes('name="theme-color" content="#f8f5fc"'), 'light purple browser theme color is missing');
-check((await readFile('theme.css', 'utf8')).includes('--deep: #4c3a65'), 'light purple theme palette is missing');
+check(styles.includes('@media(max-width:760px)'), 'mobile layout styles are missing');
+check(styles.includes('prefers-reduced-motion:reduce'), 'reduced-motion support is missing');
+check(theme.includes('--accent:#a4f46e'), 'technology-company accent palette is missing');
 check(workflow.includes('actions/deploy-pages@v4'), 'GitHub Pages deployment action is missing');
 check(workflow.includes('branches: [main]'), 'GitHub Pages workflow is not configured for main');
 
@@ -42,4 +43,4 @@ if (failures.length) {
   process.exit(1);
 }
 
-console.log(`PASS: validated DEMO marketing content, light purple theme, ${internalTargets.length} internal links, mobile navigation, contact form, and Pages workflow`);
+console.log(`PASS: validated DEMO technology content, ${internalTargets.length} internal links, mobile layout and navigation, contact form, and Pages workflow`);
