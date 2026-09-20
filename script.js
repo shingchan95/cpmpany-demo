@@ -60,6 +60,6 @@ document.addEventListener('keydown', (event) => {
 document.querySelector('#contact-form')?.addEventListener('submit', (event) => {
   event.preventDefault();
   const message = event.currentTarget.querySelector('.form-message');
-  message.textContent = 'Thanks — we’ll be in touch within one working day.';
+  message.textContent = 'Thanks — your message has been received in this demo.';
   event.currentTarget.reset();
 });
