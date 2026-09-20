@@ -1,20 +1,20 @@
 :root {
-  --ink: #25323a;
-  --muted: #68767d;
-  --paper: #faf9f6;
-  --cream: #efebe2;
-  --sage: #e6ece8;
-  --deep: #203d4c;
-  --deep-soft: #315c6b;
-  --accent: #b4553a;
-  --accent-soft: #e5c17f;
-  --line: #dfdfd9;
+  --ink: #202d29;
+  --muted: #62736c;
+  --paper: #faf9f5;
+  --cream: #e9eee7;
+  --sage: #e2eae1;
+  --deep: #1d443d;
+  --deep-soft: #38655b;
+  --accent: #b35d3c;
+  --accent-soft: #e0c284;
+  --line: #dce2da;
   --surface: #fffefa;
-  --surface-muted: #f4f3ed;
+  --surface-muted: #f2f3ec;
   --serif: 'Playfair Display', Georgia, serif;
   --sans: 'DM Sans', Arial, sans-serif;
   --radius: 18px;
-  --shadow: 0 18px 48px rgb(37 50 58 / 9%);
+  --shadow: 0 18px 48px rgb(29 68 61 / 10%);
 }
 
 html {
@@ -26,8 +26,8 @@ body {
   overflow-x: hidden;
   color: var(--ink);
   background:
-    radial-gradient(ellipse at 8% 24%, rgb(230 236 232 / 62%), transparent 28rem),
-    radial-gradient(ellipse at 94% 58%, rgb(229 193 127 / 12%), transparent 32rem),
+    radial-gradient(ellipse at 8% 24%, rgb(226 234 225 / 72%), transparent 28rem),
+    radial-gradient(ellipse at 94% 58%, rgb(224 194 132 / 15%), transparent 32rem),
     var(--paper);
   font-size: 15px;
   -webkit-font-smoothing: antialiased;
@@ -35,7 +35,7 @@ body {
 
 ::selection {
   color: var(--deep);
-  background: #efc9b8;
+  background: #efd0bd;
 }
 
 .site-header {
@@ -46,9 +46,9 @@ body {
   max-width: none;
   height: 78px;
   padding: 0 max(24px, calc((100vw - 1180px) / 2));
-  border-bottom: 1px solid rgb(223 223 214 / 85%);
-  background: rgb(250 249 246 / 94%);
-  box-shadow: 0 8px 24px rgb(37 50 58 / 4%);
+  border-bottom: 1px solid rgb(220 226 218 / 88%);
+  background: rgb(250 249 245 / 94%);
+  box-shadow: 0 8px 24px rgb(29 68 61 / 5%);
   backdrop-filter: blur(16px);
 }
 
@@ -64,7 +64,7 @@ body {
   border-radius: 11px;
   background: var(--accent);
   color: #fffaf3;
-  box-shadow: 0 5px 14px rgb(180 85 58 / 18%);
+  box-shadow: 0 5px 14px rgb(179 93 60 / 20%);
   font: 700 21px var(--sans);
 }
 
@@ -138,13 +138,13 @@ body {
 .button-primary {
   color: #fff;
   background: var(--deep);
-  box-shadow: 0 8px 20px rgb(32 61 76 / 16%);
+  box-shadow: 0 8px 20px rgb(29 68 61 / 18%);
 }
 
 .button-primary:hover {
   transform: translateY(-2px);
   background: var(--deep-soft);
-  box-shadow: 0 12px 26px rgb(32 61 76 / 22%);
+  box-shadow: 0 12px 26px rgb(29 68 61 / 24%);
 }
 
 .button-primary:active {
@@ -252,7 +252,7 @@ h2 {
   position: absolute;
   z-index: -1;
   inset: 7% -1% 13% 14%;
-  border: 1px solid rgb(32 61 76 / 12%);
+  border: 1px solid rgb(29 68 61 / 14%);
   border-radius: 48% 52% 43% 57%;
   content: "";
   transform: rotate(-9deg);
@@ -265,7 +265,7 @@ h2 {
   border-radius: 180px 180px 12px 12px;
   background-position: center 54%;
   filter: saturate(.86);
-  box-shadow: 0 22px 60px rgb(37 50 58 / 14%);
+  box-shadow: 0 22px 60px rgb(29 45 41 / 16%);
 }
 
 .image-one::after,
@@ -293,14 +293,14 @@ h2 {
   background: var(--accent);
   color: #fffaf4;
   font-size: 13px;
-  box-shadow: 0 12px 28px rgb(28 43 44 / 15%);
+  box-shadow: 0 12px 28px rgb(29 45 41 / 16%);
 }
 
 .floating-card {
   bottom: 4px;
   min-width: 250px;
   padding: 17px 19px;
-  border: 1px solid rgb(223 223 214 / 90%);
+  border: 1px solid rgb(220 226 218 / 92%);
   border-radius: 12px;
   background: var(--surface);
   box-shadow: var(--shadow);
@@ -339,7 +339,7 @@ h2 {
 
 .stats-grid div {
   padding-left: clamp(18px, 3vw, 38px);
-  border-color: rgb(255 255 255 / 18%);
+  border-color: rgb(255 255 255 / 20%);
 }
 
 .stats-grid strong {
@@ -387,7 +387,7 @@ h2 {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--surface);
-  box-shadow: 0 8px 24px rgb(31 48 44 / 3%);
+  box-shadow: 0 8px 24px rgb(29 68 61 / 4%);
   transition: transform .24s ease, box-shadow .24s ease, border-color .24s ease;
 }
 
@@ -413,7 +413,7 @@ h2 {
 .service-card:not(.featured):hover {
   transform: translateY(-5px);
   border-color: #c7d1c8;
-  box-shadow: 0 18px 38px rgb(31 48 44 / 9%);
+  box-shadow: 0 18px 38px rgb(29 68 61 / 10%);
 }
 
 .service-card.featured {
@@ -421,7 +421,7 @@ h2 {
   border-color: var(--deep);
   background: linear-gradient(145deg, var(--deep), var(--deep-soft));
   color: #f3f4ed;
-  box-shadow: 0 20px 38px rgb(32 61 76 / 19%);
+  box-shadow: 0 20px 38px rgb(29 68 61 / 20%);
 }
 
 .service-card.featured::before {
@@ -483,15 +483,15 @@ h2 {
 .project {
   overflow: hidden;
   padding: 16px 16px 28px;
-  border: 1px solid rgb(32 61 76 / 7%);
+  border: 1px solid rgb(29 68 61 / 8%);
   border-radius: 20px;
-  box-shadow: 0 14px 36px rgb(31 48 44 / 5%);
+  box-shadow: 0 14px 36px rgb(29 68 61 / 6%);
   transition: transform .24s ease, box-shadow .24s ease;
 }
 
 .project:hover {
   transform: translateY(-4px);
-  box-shadow: 0 22px 46px rgb(31 48 44 / 11%);
+  box-shadow: 0 22px 46px rgb(29 68 61 / 12%);
 }
 
 .project-dark {
@@ -585,7 +585,7 @@ h2 {
   isolation: isolate;
   overflow: hidden;
   border-radius: 190px 190px 14px 14px;
-  box-shadow: 0 24px 55px rgb(28 43 44 / 12%);
+  box-shadow: 0 24px 55px rgb(29 45 41 / 14%);
 }
 
 .approach-image::after {
@@ -622,7 +622,7 @@ h2 {
   right: max(-70px, calc((100vw - 1180px) / 2));
   width: 300px;
   height: 300px;
-  border: 1px solid rgb(32 61 76 / 10%);
+  border: 1px solid rgb(29 68 61 / 12%);
   border-radius: 50%;
   content: "";
 }
@@ -657,7 +657,7 @@ blockquote {
 
 .contact-card {
   padding: clamp(24px, 4vw, 36px);
-  border: 1px solid rgb(32 61 76 / 7%);
+  border: 1px solid rgb(29 68 61 / 8%);
   border-radius: 20px;
   background: var(--surface);
   box-shadow: var(--shadow);
@@ -692,7 +692,7 @@ blockquote {
 .contact-card textarea:focus {
   border-color: var(--accent);
   background: var(--surface);
-  box-shadow: 0 0 0 3px rgb(180 85 58 / 12%);
+  box-shadow: 0 0 0 3px rgb(179 93 60 / 14%);
 }
 
 .form-message {
@@ -751,7 +751,7 @@ textarea:focus-visible {
 
 .service-card:focus-within,
 .project:focus-within {
-  outline: 3px solid rgb(180 85 58 / 28%);
+  outline: 3px solid rgb(179 93 60 / 30%);
   outline-offset: 3px;
 }
 
@@ -884,7 +884,7 @@ main:focus {
   .stats-grid div:first-child {
     padding-left: 0;
     border-right: 0;
-    border-bottom: 1px solid rgb(255 255 255 / 18%);
+    border-bottom: 1px solid rgb(255 255 255 / 20%);
     padding-bottom: 14px;
   }
 
