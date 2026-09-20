@@ -1137,3 +1137,33 @@ main:focus {
     transition: none;
   }
 }
+
+/* Keep image captions readable above their photo overlays. */
+.approach-image::after {
+  z-index: 0;
+}
+
+.approach-image .image-label {
+  z-index: 1;
+}
+
+.hero-visual .image-label {
+  z-index: 1;
+}
+
+/* Use the same soft surface treatment on form controls as the cards. */
+.contact-card input:hover,
+.contact-card textarea:hover {
+  border-color: #c5cec7;
+}
+
+.contact-card input:focus-visible,
+.contact-card textarea:focus-visible {
+  outline-color: var(--accent);
+}
+
+@media (max-width: 760px) {
+  .approach-image::after {
+    background: linear-gradient(180deg, transparent 48%, rgb(18 42 39 / 36%));
+  }
+}
