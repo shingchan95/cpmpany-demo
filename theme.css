@@ -5,7 +5,8 @@
   --cream: #f0ece3;
   --sage: #e6ebe5;
   --deep: #183d3b;
-  --accent: #bf694f;
+  --accent: #bd713f;
+  --accent-soft: #edc17c;
   --line: #e2ded4;
   --serif: 'Playfair Display', Georgia, serif;
   --sans: 'DM Sans', Arial, sans-serif;
@@ -110,6 +111,10 @@ body {
   background: #285653;
 }
 
+.button-primary:active {
+  transform: translateY(0);
+}
+
 .menu-toggle {
   padding: 8px;
   cursor: pointer;
@@ -206,7 +211,7 @@ h2 {
 .sun-disc {
   width: 170px;
   height: 170px;
-  background: #eeb59e;
+  background: var(--accent-soft);
   opacity: .86;
 }
 
@@ -266,7 +271,7 @@ h2 {
 }
 
 .stats-grid strong {
-  color: #f0b09a;
+  color: var(--accent-soft);
   font: 600 31px var(--sans);
   letter-spacing: -.04em;
 }
@@ -339,7 +344,7 @@ h2 {
 }
 
 .featured .service-icon {
-  color: #f0b09a;
+  color: var(--accent-soft);
 }
 
 .service-card h3 {
@@ -382,7 +387,7 @@ h2 {
 }
 
 .project-orange {
-  background: #f4e5dc;
+  background: #f2e8d9;
 }
 
 .project-art {
@@ -397,8 +402,8 @@ h2 {
 }
 
 .art-two {
-  background: linear-gradient(135deg, #f2d7c9, #f6eee3 65%, #dfc4ae);
-  color: #ae6048;
+  background: linear-gradient(135deg, #f1dfc1, #f8f1e5 65%, #ddc39f);
+  color: #9a5c32;
 }
 
 .project > div:last-child {
@@ -474,7 +479,7 @@ blockquote {
 }
 
 .contact-details a {
-  color: #ad5b43;
+  color: var(--accent);
 }
 
 .contact-card {
@@ -529,7 +534,7 @@ textarea:focus {
 }
 
 .footer-inner .brand-mark {
-  background: #f0b09a;
+  background: var(--accent-soft);
   color: var(--deep);
 }
 
@@ -842,5 +847,53 @@ main:focus {
     transition-duration: .01ms !important;
     animation-duration: .01ms !important;
     animation-iteration-count: 1 !important;
+  }
+}
+
+/* Keep the shared visual language consistent as content moves between sections. */
+.service-card,
+.project,
+.contact-card,
+.floating-card {
+  border-radius: var(--radius);
+}
+
+.service-card.featured {
+  border-radius: var(--radius);
+}
+
+.project {
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.project:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgb(28 43 44 / 10%);
+}
+
+.project-art {
+  border-radius: calc(var(--radius) - 6px);
+}
+
+.image-one,
+.approach-image {
+  background-color: var(--cream);
+}
+
+.contact-card input,
+.contact-card textarea {
+  transition: border-color .2s ease;
+}
+
+@media (max-width: 760px) {
+  .project:hover {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project,
+  .service-card {
+    transform: none !important;
   }
 }
