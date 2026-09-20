@@ -1,19 +1,20 @@
 :root {
-  --ink: #1e2c30;
-  --muted: #687477;
+  --ink: #24302e;
+  --muted: #687572;
   --paper: #faf8f3;
-  --cream: #f0ece4;
-  --sage: #e5ebe5;
-  --deep: #183d43;
-  --accent: #c66b50;
-  --line: #e4ded5;
+  --cream: #f0ece3;
+  --sage: #e6ebe5;
+  --deep: #183d3b;
+  --accent: #bf694f;
+  --line: #e2ded4;
   --serif: 'Playfair Display', Georgia, serif;
   --sans: 'DM Sans', Arial, sans-serif;
-  --radius-card: 16px;
-  --shadow-soft: 0 18px 46px rgb(28 43 44 / 9%);
+  --radius: 16px;
+  --shadow: 0 18px 48px rgb(31 48 44 / 9%);
 }
 
 html {
+  scroll-behavior: smooth;
   scroll-padding-top: 92px;
 }
 
@@ -27,7 +28,7 @@ body {
 
 ::selection {
   color: var(--deep);
-  background: #f2c3ae;
+  background: #efc5b3;
 }
 
 .site-header {
@@ -37,13 +38,14 @@ body {
   max-width: none;
   height: 78px;
   padding: 0 max(24px, calc((100vw - 1180px) / 2));
-  border-bottom: 1px solid rgb(228 222 213 / 82%);
+  border-bottom: 1px solid rgb(226 222 212 / 85%);
   background: rgb(250 248 243 / 94%);
   backdrop-filter: blur(16px);
 }
 
 .brand {
   gap: 11px;
+  color: var(--deep);
   letter-spacing: .19em;
 }
 
@@ -52,13 +54,13 @@ body {
   height: 36px;
   border-radius: 11px;
   background: var(--accent);
-  color: var(--deep);
+  color: #fffaf3;
   font: 700 21px var(--sans);
 }
 
 .nav-links {
-  gap: clamp(20px, 3vw, 40px);
-  color: #59696b;
+  gap: clamp(18px, 3vw, 40px);
+  color: #596966;
   font-size: 13px;
   font-weight: 600;
 }
@@ -90,7 +92,7 @@ body {
 }
 
 .button-outline {
-  border-color: #cfcac0;
+  border-color: #ccc8be;
   color: var(--deep);
 }
 
@@ -105,7 +107,7 @@ body {
 
 .button-primary:hover {
   transform: translateY(-2px);
-  background: #27535a;
+  background: #285653;
 }
 
 .menu-toggle {
@@ -116,13 +118,13 @@ body {
 
 .hero {
   min-height: 630px;
-  padding-top: 60px;
+  padding-top: 58px;
   padding-bottom: 76px;
   gap: clamp(36px, 6vw, 82px);
 }
 
 .eyebrow {
-  color: #687d7b;
+  color: #697d76;
   font-size: 10px;
   letter-spacing: .17em;
 }
@@ -142,13 +144,13 @@ h2 {
 h1 {
   max-width: 630px;
   margin: 23px 0 20px;
-  font-size: clamp(54px, 6.2vw, 78px);
-  line-height: .99;
+  font-size: clamp(52px, 6.2vw, 76px);
+  line-height: 1;
 }
 
 h1 em,
 h2 em {
-  color: #bd694f;
+  color: var(--accent);
 }
 
 h2 {
@@ -158,7 +160,7 @@ h2 {
 
 .hero-text {
   max-width: 470px;
-  color: #617174;
+  color: #61716d;
   font-size: 16px;
   line-height: 1.75;
 }
@@ -178,7 +180,7 @@ h2 {
 }
 
 .trust-row {
-  color: #708082;
+  color: #70807c;
 }
 
 .trust-row strong {
@@ -222,13 +224,13 @@ h2 {
   bottom: 4px;
   min-width: 250px;
   padding: 17px 19px;
-  border: 1px solid rgb(228 222 213 / 80%);
+  border: 1px solid rgb(226 222 212 / 85%);
   border-radius: 12px;
-  box-shadow: var(--shadow-soft);
+  box-shadow: var(--shadow);
 }
 
 .floating-card small {
-  color: #748183;
+  color: #74817d;
 }
 
 .floating-card strong {
@@ -292,7 +294,7 @@ h2 {
 
 .section-intro > p:last-child,
 .work-heading > p:last-child {
-  color: #667477;
+  color: #667470;
   line-height: 1.75;
 }
 
@@ -304,7 +306,7 @@ h2 {
   min-height: 302px;
   padding: 27px 28px 25px;
   border: 1px solid var(--line);
-  border-radius: var(--radius-card);
+  border-radius: var(--radius);
   background: #fffefa;
   box-shadow: 0 8px 26px rgb(28 43 44 / 3%);
   transition: transform .25s ease, box-shadow .25s ease;
@@ -320,7 +322,7 @@ h2 {
   border-color: var(--deep);
   background: var(--deep);
   color: #f3f4ed;
-  box-shadow: 0 18px 40px rgb(24 61 67 / 17%);
+  box-shadow: 0 18px 40px rgb(24 61 59 / 17%);
 }
 
 .service-card.featured:hover {
@@ -351,7 +353,7 @@ h2 {
 }
 
 .service-card p {
-  color: #687679;
+  color: #687572;
   line-height: 1.65;
 }
 
@@ -371,7 +373,7 @@ h2 {
   overflow: hidden;
   padding: 16px 16px 28px;
   border: 1px solid var(--line);
-  border-radius: var(--radius-card);
+  border-radius: var(--radius);
   box-shadow: 0 10px 32px rgb(28 43 44 / 5%);
 }
 
@@ -390,7 +392,7 @@ h2 {
 }
 
 .art-one {
-  background: linear-gradient(135deg, #183d43 0 45%, #d4e1db 45%);
+  background: linear-gradient(135deg, #183d3b 0 45%, #d4e1db 45%);
   color: #f6f2e9;
 }
 
@@ -404,7 +406,7 @@ h2 {
 }
 
 .project-type {
-  color: #647477;
+  color: #647471;
 }
 
 .project h3 {
@@ -427,7 +429,7 @@ h2 {
 }
 
 .approach-copy > p:not(.eyebrow) {
-  color: #617174;
+  color: #61716d;
   line-height: 1.75;
 }
 
@@ -441,7 +443,7 @@ h2 {
 }
 
 .principles p {
-  color: #657477;
+  color: #657470;
 }
 
 .quote-section {
@@ -463,11 +465,11 @@ blockquote {
 }
 
 .quote-wrap p {
-  color: #586b6d;
+  color: #586b67;
 }
 
 .contact-intro {
-  color: #617174;
+  color: #61716d;
   line-height: 1.75;
 }
 
@@ -478,18 +480,18 @@ blockquote {
 .contact-card {
   padding: clamp(24px, 4vw, 36px);
   border: 1px solid var(--line);
-  border-radius: var(--radius-card);
+  border-radius: var(--radius);
   background: #fffefa;
-  box-shadow: var(--shadow-soft);
+  box-shadow: var(--shadow);
 }
 
 .contact-card > p {
-  color: #627174;
+  color: #62716e;
   line-height: 1.65;
 }
 
 .contact-card label {
-  color: #586a6c;
+  color: #586a67;
 }
 
 input,
@@ -500,7 +502,7 @@ textarea {
 
 input::placeholder,
 textarea::placeholder {
-  color: #899496;
+  color: #899491;
   opacity: 1;
 }
 
@@ -514,36 +516,45 @@ textarea:focus {
 }
 
 .site-footer {
-  background: #15363c;
+  background: #153633;
   color: #e2e9e5;
 }
 
 .footer-inner {
-  min-height: 180px;
+  min-height: 190px;
 }
 
-.site-footer .brand-mark {
-  background: var(--accent);
+.footer-inner .brand {
+  color: #fff;
+}
+
+.footer-inner .brand-mark {
+  background: #f0b09a;
   color: var(--deep);
 }
 
 .footer-inner > p {
-  color: #bac9c5;
-}
-
-.footer-links {
-  color: #e0e8e4;
+  color: #bdcbc5;
 }
 
 .footer-inner small {
-  border-color: rgb(239 236 227 / 23%);
-  color: #a9bbb6;
+  border-color: rgb(226 233 229 / 20%);
+  color: #a8bab2;
 }
 
 .skip-link {
-  border-radius: 0 0 8px 8px;
+  position: absolute;
+  left: 16px;
+  top: -48px;
+  z-index: 20;
+  padding: 10px 14px;
+  border-radius: 0 0 6px 6px;
   background: var(--deep);
   color: #fff;
+}
+
+.skip-link:focus {
+  top: 0;
 }
 
 a:focus-visible,
@@ -551,87 +562,73 @@ button:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
   outline: 3px solid var(--accent);
-  outline-offset: 3px;
+  outline-offset: 4px;
 }
 
 main:focus {
   outline: none;
 }
 
-@media (max-width: 900px) {
-  .site-header {
-    padding-right: 24px;
-    padding-left: 24px;
-  }
+.form-message:empty {
+  display: none;
+}
 
-  .nav-links {
-    gap: 18px;
-  }
-
-  .site-header > .button {
-    padding-right: 14px;
-    padding-left: 14px;
-  }
-
-  .section-shell {
-    padding-right: 24px;
-    padding-left: 24px;
-  }
-
+@media (max-width: 980px) {
   .hero {
-    gap: 34px;
+    gap: 30px;
   }
 
-  .hero-visual {
-    min-height: 390px;
+  .hero h1 {
+    font-size: clamp(48px, 6.2vw, 64px);
   }
 
   .approach {
-    gap: 58px;
-  }
-
-  .contact {
     gap: 48px;
   }
 }
 
 @media (max-width: 760px) {
   html {
-    scroll-padding-top: 78px;
+    scroll-padding-top: 76px;
   }
 
   .site-header {
-    height: 72px;
+    height: 68px;
     padding: 0 20px;
   }
 
-  .nav-links {
+  .nav-links,
+  .site-header > .button {
     display: none;
   }
 
   .nav-links.is-open {
     position: absolute;
     z-index: 10;
-    top: 72px;
-    right: 14px;
-    left: 14px;
+    top: 68px;
+    right: 16px;
+    left: 16px;
     display: flex;
     flex-direction: column;
     gap: 0;
-    padding: 8px 18px;
+    padding: 8px 20px;
     border: 1px solid var(--line);
     border-radius: 14px;
-    background: rgb(250 248 243 / 98%);
-    box-shadow: 0 16px 36px rgb(28 43 44 / 12%);
+    background: var(--paper);
+    box-shadow: var(--shadow);
   }
 
   .nav-links.is-open a {
-    padding: 12px 2px;
+    padding: 12px 0;
     border-bottom: 1px solid var(--line);
   }
 
   .nav-links.is-open a:last-child {
     border-bottom: 0;
+  }
+
+  .menu-toggle {
+    display: block;
   }
 
   .section-shell {
@@ -643,88 +640,104 @@ main:focus {
     display: block;
     min-height: 0;
     padding-top: 48px;
-    padding-bottom: 70px;
+    padding-bottom: 68px;
   }
 
   .hero h1 {
-    max-width: 560px;
-    font-size: clamp(48px, 12vw, 62px);
+    max-width: 570px;
+    font-size: clamp(48px, 11vw, 68px);
+  }
+
+  .hero-actions {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 40px;
   }
 
   .hero-visual {
-    height: clamp(340px, 96vw, 430px);
-    min-height: 0;
-    margin-top: 42px;
+    height: min(112vw, 440px);
+    min-height: 340px;
+    margin-top: 40px;
+  }
+
+  .image-one {
+    inset: 18px 20px 28px 25px;
   }
 
   .hero-sticker {
-    top: 130px;
+    top: 112px;
     right: 0;
-    width: 95px;
-    height: 95px;
+    width: 94px;
+    height: 94px;
+  }
+
+  .floating-card {
+    left: 0;
+    bottom: 0;
+    min-width: 0;
   }
 
   .stats-grid {
     grid-template-columns: 1fr 1fr;
-    gap: 20px 12px;
+    gap: 22px;
     padding-top: 25px;
     padding-bottom: 25px;
   }
 
   .stats-grid div,
   .stats-grid div:first-child {
-    padding: 0;
+    padding-left: 0;
     border: 0;
   }
 
   .stats-grid strong {
-    font-size: 28px;
+    font-size: 27px;
+  }
+
+  .services,
+  .contact {
+    padding-top: 78px;
+    padding-bottom: 78px;
   }
 
   .section-intro,
   .work-heading {
     display: block;
-    margin-bottom: 34px;
+    margin-bottom: 35px;
   }
 
   .section-intro > p:last-child,
   .work-heading > p:last-child {
-    margin-top: 25px;
+    margin-top: 22px;
   }
 
-  .services {
-    padding-top: 80px;
-    padding-bottom: 80px;
+  .service-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
   }
 
-  .service-grid,
-  .work-grid {
-    display: block;
+  .service-card {
+    min-height: 265px;
   }
 
-  .service-card,
-  .service-card.featured {
-    min-height: 255px;
-    margin-bottom: 14px;
+  .service-card.featured,
+  .service-card.featured:hover {
     transform: none;
   }
 
-  .service-card:hover,
-  .service-card.featured:hover {
-    transform: translateY(-3px);
-  }
-
   .work {
-    padding-bottom: 80px;
+    padding-bottom: 78px;
   }
 
-  .project {
-    margin-bottom: 16px;
-    padding: 12px 12px 24px;
+  .work-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 
   .project-art {
-    height: clamp(220px, 63vw, 280px);
+    height: 240px;
   }
 
   .art-one span,
@@ -735,103 +748,99 @@ main:focus {
   .approach {
     display: flex;
     flex-direction: column;
-    gap: 38px;
-    padding-bottom: 80px;
+    gap: 42px;
+    padding-bottom: 78px;
   }
 
   .approach-image {
     width: 100%;
-    height: clamp(340px, 100vw, 440px);
+    height: min(108vw, 430px);
+    min-height: 320px;
   }
 
   .approach h2,
   .contact h2 {
-    font-size: 40px;
+    font-size: clamp(40px, 10vw, 48px);
   }
 
   .quote-wrap {
-    padding-top: 65px;
-    padding-bottom: 65px;
+    padding-top: 64px;
+    padding-bottom: 64px;
   }
 
   blockquote {
-    font-size: clamp(25px, 7vw, 31px);
+    font-size: clamp(26px, 7vw, 32px);
   }
 
   .contact {
     display: block;
-    padding-top: 80px;
-    padding-bottom: 80px;
   }
 
   .contact-card {
-    margin-top: 34px;
+    margin-top: 36px;
   }
 
   .footer-inner {
     display: block;
-    padding-top: 36px;
-    padding-bottom: 28px;
+    padding-top: 34px;
+    padding-bottom: 24px;
   }
 
   .footer-inner > p {
-    margin: 18px 0;
+    margin: 17px 0;
   }
 
   .footer-links {
     justify-content: flex-start;
     flex-wrap: wrap;
-    margin: 25px 0;
+    gap: 12px 20px;
+    margin: 23px 0;
   }
 
   .footer-inner small {
     display: block;
   }
-
-  .hero-actions {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 20px;
-    margin-bottom: 40px;
-  }
 }
 
 @media (max-width: 380px) {
+  .site-header {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
   .section-shell {
-    padding-right: 18px;
-    padding-left: 18px;
+    padding-right: 16px;
+    padding-left: 16px;
   }
 
-  .hero-actions {
-    align-items: stretch;
-  }
-
-  .hero-actions .button {
-    width: 100%;
-  }
-
-  .hero-sticker {
-    width: 82px;
-    height: 82px;
-    font-size: 11px;
+  .hero h1 {
+    font-size: 46px;
   }
 
   .floating-card {
-    width: min(250px, 88%);
-    min-width: 0;
     gap: 9px;
-    padding: 14px;
+    padding: 13px;
   }
 
   .trend {
     font-size: 10px;
   }
+
+  .contact-card {
+    padding: 22px 18px;
+  }
 }
 
-@media (hover: none) {
-  .service-card:hover,
-  .service-card.featured:hover,
-  .button-primary:hover {
-    transform: none;
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
   }
 }
