@@ -3,6 +3,11 @@
 a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 .menu-toggle{padding:8px;cursor:pointer}
 .form-message:empty{display:none}
+.site-update{display:flex;align-items:flex-start;gap:10px;width:max-content;max-width:100%;margin:0 0 18px;padding:10px 13px;border:1px solid #2c3a50;border-radius:10px;background:#101a2a;color:#9daabd;font:10px/1.45 var(--mono);letter-spacing:.02em}
+.site-update .online-dot{width:7px;height:7px;margin-top:4px;box-shadow:0 0 13px #a4f46e80}
+.site-update span:last-child{display:flex;flex-wrap:wrap;gap:5px 10px}
+.site-update strong{color:var(--accent);font-weight:500}
+.site-update time{color:#d8e0e8}
 .button:focus-visible,
 .nav-links a:focus-visible,
 .text-link:focus-visible,
